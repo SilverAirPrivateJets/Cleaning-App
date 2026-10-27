@@ -12,6 +12,13 @@
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20317.48%2092.26%22%20fill%3D%22%23FD9600%22%20role%3D%22img%22%20aria-label%3D%22Silver%20Air%22%3E%3Cpath%20d%3D%22M303.89%2020.56L315.48%202L196.15%2025.79C188.73%2012.81%20174.76%204.06%20158.74%204.06C142.72%204.06%20128.75%2012.81%20121.32%2025.79L2%202L13.59%2020.56L117.47%2034.74C116.71%2037.29%20116.16%2039.94%20115.88%2042.66L22.24%2033.81L32.88%2051.1L116.01%2052.62C116.4%2055.71%20117.11%2058.7%20118.11%2061.54L44.07%2061.01L54.4%2076.87L123.37%2071.77C131.16%2082.94%20144.09%2090.26%20158.74%2090.26C173.39%2090.26%20186.32%2082.94%20194.11%2071.77L263.08%2076.87L273.41%2061L199.37%2061.54C200.38%2058.69%20201.09%2055.7%20201.48%2052.62L284.6%2051.09L295.24%2033.8L201.6%2042.65C201.32%2039.93%20200.77%2037.28%20200.01%2034.73L303.89%2020.55L303.89%2020.56M158.82%2082.56C139.32%2082.56%20123.52%2066.75%20123.52%2047.25C123.52%2027.74%20139.32%2011.93%20158.82%2011.93C178.32%2011.93%20194.13%2027.74%20194.13%2047.25C194.13%2066.75%20178.32%2082.56%20158.82%2082.56%22/%3E%3Cpath%20d%3D%22M171.01%2042.01L145.06%2042.01L145.06%2033.06L172.31%2033.06L172.31%2037.79L180.85%2035.78L180.85%2034.92C180.85%2031.5%20180.11%2029.13%20178.63%2027.79C177.15%2026.45%20174.45%2025.78%20170.54%2025.78L146.91%2025.78C142.87%2025.78%20140.14%2026.48%20138.72%2027.87C137.3%2029.26%20136.6%2031.85%20136.6%2035.63L136.6%2040.24C136.6%2044.02%20137.3%2046.61%20138.72%2048C140.14%2049.4%20142.87%2050.09%20146.91%2050.09L172.86%2050.09L172.86%2059.58L143.45%2059.58L143.45%2054.66L134.9%2056.43L134.9%2057.58C134.9%2061.36%20135.62%2063.95%20137.05%2065.34C138.48%2066.73%20141.23%2067.43%20145.3%2067.43L171.01%2067.43C175.09%2067.43%20177.83%2066.73%20179.27%2065.34C180.7%2063.95%20181.41%2061.36%20181.41%2057.58L181.41%2051.86C181.41%2048.08%20180.69%2045.49%20179.27%2044.1C177.83%2042.71%20175.09%2042.01%20171.01%2042.01L171.01%2042.01%22/%3E%3C/svg%3E">
 <meta name="theme-color" content="#0B0B0C">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Cleaning Desk">
+<meta name="format-detection" content="telephone=no">
 <style>body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <style>
 :root{
@@ -227,7 +234,7 @@ textarea.input{resize:vertical;min-height:70px}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13.5px}
 .kv dt{color:var(--ink-3)}
 .kv dd{margin:0;font-variant-numeric:tabular-nums;min-width:0}
-.cls{font-family:var(--f-mono);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);border:1px solid var(--line);border-radius:3px;padding:0 6px}
+.cls{font-family:var(--f-mono);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);border:1px solid var(--line);border-radius:3px;padding:0 6px;white-space:nowrap;display:inline-block}
 .ac-card .ft{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
 
 /* Settings */
@@ -328,6 +335,29 @@ ol.how{margin:0;padding-left:20px;display:grid;gap:6px;max-width:75ch}
 .pc-in{width:170px}
 @media (max-width:560px){.pc-in{width:100%}}
 .photos img:not([src]){opacity:0}
+.flag-new{display:inline-block;font-family:var(--f-mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--brand-orange);color:#121314;border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.job.unseen{box-shadow:inset 4px 0 0 var(--brand-orange)}
+.alertbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--accent-soft);border:1px solid var(--brand-orange);border-left-width:4px;border-radius:var(--r);padding:12px 14px;margin-bottom:16px}
+.alertbar b{font-family:var(--f-display);font-weight:500;font-size:18px}
+.nav .count{background:var(--brand-orange);color:#121314;border-radius:999px;font-size:11px;line-height:17px;padding:0 6px;font-weight:700;letter-spacing:0}
+.docrow{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;background:var(--surface-3)}
+.docrow .nm{font-weight:600;overflow-wrap:anywhere}
+.billbox{border:1px solid var(--line);border-left:4px solid var(--brand-gray);border-radius:var(--r);padding:12px 14px;display:grid;gap:10px}
+.billbox.done{border-left-color:var(--s-done)}
+.billbox.wait{border-left-color:var(--brand-orange)}
+.billbox .big{font-family:var(--f-display);font-size:20px;font-weight:500}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--line);border-radius:6px;padding:14px;cursor:pointer;background:var(--surface)}
+.choice:has(input:checked){border-color:var(--brand-orange);background:var(--accent-soft)}
+.choice input{accent-color:var(--brand-orange);margin-top:3px}
+.choice b{display:block;font-family:var(--f-display);font-weight:500;font-size:20px}
+.choice span{font-size:13px;color:var(--ink-2)}
+@media (max-width:480px){.choices{grid-template-columns:1fr}}
+.filepick{display:grid;gap:6px}
+.filepick input[type=file]{font-size:14px}
+.cp{max-width:620px}
+.cp .kv{font-size:14.5px;gap:6px 16px}
+.install ol{margin:6px 0 0;padding-left:20px;display:grid;gap:4px}
 .top .btn.ghost{color:var(--bar-ink-2)}
 .top .btn.ghost:hover{color:var(--bar-ink);background:#222425}
 .top .av{background:#2A2C2D;color:#FFFFFF}
@@ -363,6 +393,7 @@ const FILTERS = [
   {k:'completed', label:'Completed', st:['completed']},
   {k:'invoiced', label:'Invoiced', st:['invoiced']},
   {k:'all', label:'All', st:null},
+  {k:'fresh', label:'New & updated', fn:j=>!!unseen(j)},
 ];
 
 /* ---------- storage ---------- */
@@ -423,13 +454,46 @@ function visibleJobs(){
   if(isVendor()) return S.jobs.filter(j=>j.vendorId===S.vendorId);
   return [];
 }
+function side(){ return isVendor() ? 'vendor' : 'silverair'; }
+function entrySide(a){ return (a && a.as === 'Silver Air') ? 'silverair' : 'vendor'; }
+// 'new' = vendor has never opened this request, 'updated' = the other side did something since we last looked.
+function unseen(j){
+  if(!S.role || j.status==='cancelled' && isVendor() && !(j.seen||{}).vendor) return null;
+  const me = side(); const seenAt = pd((j.seen||{})[me]); const t = seenAt ? +seenAt : 0;
+  const fresh = (j.activity||[]).some(a => entrySide(a)!==me && (+pd(a.at)||0) > t);
+  if(!fresh) return null;
+  if(me==='vendor' && !seenAt && ['requested','declined'].includes(j.status)) return 'new';
+  return 'updated';
+}
+function unseenJobs(){ return visibleJobs().filter(j=>unseen(j)); }
+let lastUnseen = null;
+function noticeNew(){
+  const ids = new Set(unseenJobs().map(j=>j.id));
+  if(lastUnseen){
+    const added = [...ids].filter(id=>!lastUnseen.has(id));
+    if(added.length){
+      const j = S.jobs.find(x=>x.id===added[0]);
+      const kind = j && unseen(j);
+      toast(added.length>1 ? added.length+' jobs have something new' : (kind==='new' ? 'New cleaning request for ' : 'Update on ')+(j?j.tail:'a job'));
+    }
+  }
+  lastUnseen = ids;
+  try{ document.title = (ids.size ? '('+ids.size+') ' : '') + 'Silver Air Cleaning Desk'; }catch(e){}
+}
+function markSeen(j){
+  if(!j || !unseen(j)) return;
+  j.seen = Object.assign({}, j.seen||{}, {[side()]: new Date().toISOString()});
+  if(lastUnseen) lastUnseen.delete(j.id);
+  rpc('desk_job_seen', {p_id:j.id}).catch(()=>{});
+  setTimeout(()=>{ renderNav(); if(S.view==='jobs' && !S.openId) render(); noticeNew(); }, 0);
+}
 function isOverdue(j){ const d=pd(j.due); return d && d<new Date() && ['requested','accepted','in_progress','declined'].includes(j.status); }
 
 /* ---------- server ---------- */
-async function rpc(fn, args){
+async function rpc(fn, args, noCode){
   if(!sb){ const e=new Error('no client'); e.code='no_client'; throw e; }
   let res;
-  try{ res = await sb.rpc(fn, Object.assign({p_code:S.code}, args||{})); }
+  try{ res = await sb.rpc(fn, noCode ? (args||{}) : Object.assign({p_code:S.code}, args||{})); }
   catch(x){ const e=new Error(String(x&&x.message||x)); e.code='network'; throw e; }
   const {data, error} = res;
   if(error){
@@ -445,8 +509,9 @@ async function load(){
   S.role = d.role; S.vendorId = d.vendorId || null; S.mustChange = !!d.mustChange;
   S.vendors = d.vendors || []; S.fleet = d.fleet || [];
   const c = d.config || {}; S.config = {services:c.services||[], airports:c.airports||[]};
-  S.jobs = d.jobs || []; S.codes = d.codes || [];
+  S.jobs = d.jobs || []; S.codes = d.codes || []; S.settings = d.settings || {};
   S.ready = true; S.offline = false;
+  noticeNew();
   render();
 }
 async function refresh(){
@@ -493,6 +558,7 @@ function stPill(s){ return '<span class="st st-'+esc(s)+'">'+esc((STATUS[s]||{})
 function tailTag(t,lg){ return '<span class="tail'+(lg?' lg':'')+'">'+esc(t)+'</span>'; }
 
 function render(){
+  if(typeof CHARGE_TOKEN!=='undefined' && CHARGE_TOKEN){ if(sb) renderChargePage(); return; }
   renderNav(); renderWho();
   if(!sb){
     main.innerHTML = '<div class="empty"><h2>The app couldn’t load</h2><p>Check your internet connection and refresh the page.</p></div>';
@@ -516,7 +582,8 @@ function renderNav(){
   if(!S.role || S.mustChange){ $('#nav').innerHTML=''; return; }
   const tabs=[['jobs','Jobs'],['calendar','Calendar'],['fleet','Fleet']];
   if(isAdmin()) tabs.push(['settings','Settings']);
-  $('#nav').innerHTML = tabs.map(([k,l])=>'<button data-act="view" data-v="'+k+'"'+(S.view===k?' aria-current="page"':'')+'>'+l+'</button>').join('');
+  const n = unseenJobs().length;
+  $('#nav').innerHTML = tabs.map(([k,l])=>'<button data-act="view" data-v="'+k+'"'+(S.view===k?' aria-current="page"':'')+'>'+l+(k==='jobs'&&n?' <span class="count" aria-label="'+n+' new or updated">'+n+'</span>':'')+'</button>').join('');
 }
 function renderWho(){
   if(!S.role){ $('#who').innerHTML=''; return; }
@@ -552,7 +619,7 @@ function filtered(){
   const f = FILTERS.find(x=>x.k===S.filter) || FILTERS[0];
   const q = S.q.trim().toLowerCase();
   return visibleJobs().filter(j=>{
-    if(f.st && !f.st.includes(j.status)) return false;
+    if(f.fn ? !f.fn(j) : (f.st && !f.st.includes(j.status))) return false;
     if(!q) return true;
     const ac=aircraft(j.tail)||{}; const v=vendorById(j.vendorId)||{};
     return [j.tail,j.airport,j.fbo,ac.type,v.name,j.ref,(j.services||[]).join(' ')].join(' ').toLowerCase().includes(q);
@@ -561,12 +628,20 @@ function filtered(){
 function renderJobs(){
   const staff = isStaff();
   const vis = visibleJobs();
-  const counts = {}; FILTERS.forEach(f=>counts[f.k]= f.st? vis.filter(j=>f.st.includes(j.status)).length : vis.length);
+  const counts = {}; FILTERS.forEach(f=>counts[f.k]= f.fn ? vis.filter(f.fn).length : f.st? vis.filter(j=>f.st.includes(j.status)).length : vis.length);
+  const shownFilters = FILTERS.filter(f=>f.k!=='fresh' || counts.fresh || S.filter==='fresh');
   let h = '<div class="ph"><div><h1>Cleaning jobs</h1><p class="muted">'
     + (staff ? 'Every cleaning requested across the fleet.' : 'Jobs Silver Air has sent to '+esc(orgLabel())+'.')
     + '</p></div>'
     + (staff ? '<button class="btn primary" data-act="new-job">+ New cleaning</button>' : '') + '</div>';
-  h += '<div class="tools"><div class="chips">' + FILTERS.map(f=>'<button class="chip" data-act="filter" data-f="'+f.k+'" aria-pressed="'+(S.filter===f.k)+'">'+esc(f.label)+' <span class="n">'+counts[f.k]+'</span></button>').join('') + '</div>'
+  const nNew = vis.filter(j=>unseen(j)==='new').length, nUpd = vis.filter(j=>unseen(j)==='updated').length;
+  if((nNew || nUpd) && S.filter!=='fresh'){
+    const parts = [];
+    if(nNew) parts.push(nNew+' new cleaning request'+(nNew>1?'s':''));
+    if(nUpd) parts.push(nUpd+' job'+(nUpd>1?'s':'')+' with '+(staff?'vendor ':'')+'updates');
+    h += '<div class="alertbar" role="status"><div><b>'+esc(parts.join(' and '))+'</b><div class="small muted">'+(staff?'Vendors have done something since you last looked.':'From Silver Air. Open each one to accept or decline.')+'</div></div><button class="btn primary sm" data-act="filter" data-f="fresh">Show them</button></div>';
+  }
+  h += '<div class="tools"><div class="chips">' + shownFilters.map(f=>'<button class="chip" data-act="filter" data-f="'+f.k+'" aria-pressed="'+(S.filter===f.k)+'">'+esc(f.label)+' <span class="n">'+counts[f.k]+'</span></button>').join('') + '</div>'
     + '<input class="input search" id="q" type="search" placeholder="Search tail, airport, vendor" aria-label="Search jobs" value="'+esc(S.q)+'"></div>';
   const list = filtered();
   if(!list.length){
@@ -592,10 +667,11 @@ function jobRow(j){
   const ac = aircraft(j.tail)||{}; const v = vendorById(j.vendorId);
   const s=pd(j.start), d=pd(j.due);
   const when = (s?fTime(s):'—') + ' → ' + (d ? (sameDay(s,d)? fTime(d) : fDate(d)+' '+fTime(d)) : '—');
-  return '<button class="job" data-act="open" data-id="'+esc(j.id)+'">'
+  const u = unseen(j);
+  return '<button class="job'+(u?' unseen':'')+'" data-act="open" data-id="'+esc(j.id)+'">'
     + '<span class="c-st">'+stPill(j.status)+'</span>'
     + '<span class="c-tail">'+tailTag(j.tail)+'</span>'
-    + '<span class="ac">'+esc(ac.type||'Aircraft')+'<small>'+esc([j.airport,j.fbo].filter(Boolean).join(' · '))+'</small></span>'
+    + '<span class="ac">'+esc(ac.type||'Aircraft')+(u?'<span class="flag-new">'+(u==='new'?'New':'Updated')+'</span>':'')+'<small>'+esc([j.airport,j.fbo].filter(Boolean).join(' · '))+'</small></span>'
     + '<span class="when">'+esc(when)+' <small>'+(isOverdue(j)?'<span class="flag">Overdue</span>':'local time')+'</small></span>'
     + '<span class="svc">'+esc((j.services||[]).join(' · '))+'</span>'
     + '<span class="ven'+(v?'':' none')+'">'+esc(v?v.name:'No vendor')+'</span>'
@@ -673,6 +749,16 @@ function renderSettings(){
   h += '<section class="panel"><h2>Share the app</h2><p class="muted">Send a company this link plus their passcode. No accounts or sign ups needed.</p>'
     + '<div class="linkbox"><code>'+esc(appLink())+'</code><button class="btn sm" data-act="copy-link">Copy link</button></div></section>';
 
+  h += '<section class="panel install"><h2>Use it on your phone</h2><p class="muted">The Cleaning Desk works in any phone browser. Add it to the home screen and it opens like an app, full screen with its own icon. Share these steps with your vendors too.</p>'
+    + '<div class="grid2"><div><b>iPhone (Safari)</b><ol><li>Open the link in Safari.</li><li>Tap the Share button.</li><li>Tap <b>Add to Home Screen</b>, then <b>Add</b>.</li></ol></div>'
+    + '<div><b>Android (Chrome)</b><ol><li>Open the link in Chrome.</li><li>Tap the ⋮ menu.</li><li>Tap <b>Add to Home screen</b> or <b>Install app</b>.</li></ol></div></div></section>';
+
+  const st = S.settings||{};
+  h += '<section class="panel"><h2>Billing emails</h2><p class="muted">When a vendor uploads an invoice, the billing team gets it with a button to choose Owner or Client. The answer is emailed to the billing contact. Separate several addresses with commas.</p>'
+    + '<div class="grid2"><label class="field"><span>Billing team (asks who to charge)</span><input class="input" id="bl-asm" type="text" inputmode="email" autocomplete="off" value="'+esc(st.billingEmail||'')+'"></label>'
+    + '<label class="field"><span>Billing contact (gets the answer)</span><input class="input" id="bl-notify" type="text" inputmode="email" autocomplete="off" value="'+esc(st.chargeNotifyEmail||'')+'"></label></div>'
+    + '<div style="margin-top:12px"><button class="btn primary sm" data-act="billing-save">Save billing emails</button></div></section>';
+
   h += '<section class="panel"><h2>Passcodes</h2><p class="muted">Each company’s code only shows that company’s jobs. Codes need at least 6 characters and must all be different. Changing or turning off a code signs out everyone using it.</p><div class="rows">'
     + codeRow('admin', 'Admin (you)', 'Full access, including Settings')
     + codeRow('staff', 'Silver Air staff', 'Schedule and manage all jobs. No Settings.');
@@ -746,7 +832,8 @@ function renderDrawer(){
     if(j.status==='requested') { acts.push(['accept','Accept job','primary']); acts.push(['decline','Decline','']); }
     if(j.status==='accepted') acts.push(['start','Start work','primary']);
     if(j.status==='in_progress') acts.push(['complete','Mark complete','primary']);
-    if(j.status==='completed') acts.push(['invoice','Add invoice','primary']);
+    if(j.status==='completed') acts.push(['invoice','Upload invoice','primary']);
+    if(j.status==='invoiced' && !(j.charge&&j.charge.to)) acts.push(['invoice', j.invoiceFile?'Replace invoice':'Upload invoice', j.invoiceFile?'':'primary']);
   }
   if(staff){
     if(['requested','declined'].includes(j.status)) acts.push(['reassign', j.status==='declined'?'Send to another vendor':'Change vendor', j.status==='declined'?'primary':'']);
@@ -759,6 +846,26 @@ function renderDrawer(){
     if(staff && ['accept','decline','start','complete','invoice'].includes(S.action)) h += '<p class="small muted" style="margin:-10px 0 0">You’re updating this on the vendor’s behalf.</p>';
   }
   if(S.action) h += actionBox(j);
+
+  // invoice file
+  if(j.invoiceFile){
+    const f = j.invoiceFile;
+    h += '<div><div class="label" style="margin-bottom:6px">Invoice</div><div class="docrow"><div><div class="nm">#'+esc(j.invoiceNo||'')+' · '+esc(money(j.invoiceAmount))+'</div><div class="small muted">'+esc(f.name||'invoice')+' · '+esc(fileSize(f.size))+' · uploaded '+esc(ago(f.at))+(f.by?' by '+esc(f.by):'')+'</div></div><button class="btn sm" data-act="inv-view" data-id="'+esc(j.id)+'">View invoice</button></div></div>';
+  }
+  // billing decision (Silver Air only)
+  if(staff && j.invoiceFile){
+    const c = j.charge;
+    if(c && c.to){
+      h += '<div><div class="label" style="margin-bottom:6px">Billing</div><div class="billbox done"><div class="big">Charge the '+esc(c.to)+'</div>'
+        + (c.note?'<div class="note">'+esc(c.note)+'</div>':'')
+        + '<div class="small muted">Decided by '+esc(c.by||'someone')+(c.via==='email'?' (ASM)':' in the app')+' · '+esc(ago(c.at))+'</div>'
+        + '<div class="actions"><button class="btn sm" data-act="jact" data-k="charge">Change</button></div></div></div>';
+    } else {
+      h += '<div><div class="label" style="margin-bottom:6px">Billing</div><div class="billbox wait"><div class="big">Waiting on ASM</div>'
+        + '<div class="small muted">ASM was emailed '+esc(ago(j.chargeRequestedAt||(j.invoiceFile||{}).at))+' to choose Owner or Client.</div>'
+        + '<div class="actions"><button class="btn sm primary" data-act="jact" data-k="charge">Set it here</button><button class="btn sm" data-act="ask-asm">Email ASM again</button></div></div></div>';
+    }
+  }
 
   // photos
   const photos = j.photos||[];
@@ -792,7 +899,12 @@ function actionBox(j){
     case 'decline': return box('Decline this cleaning', '<label class="field"><span>Reason</span><input class="input" id="ax-note-'+id+'" placeholder="e.g. No crew available that day"></label>', 'Decline job','danger');
     case 'start': return box('Start work', '<p class="small muted" style="margin:0">Tip: add before photos first so Silver Air sees the aircraft’s condition.</p><label class="field"><span>Note (optional)</span><input class="input" id="ax-note-'+id+'" placeholder="e.g. On the aircraft at Hangar 4"></label>', 'Start work');
     case 'complete': return box('Mark complete', ((j.photos||[]).some(p=>p.kind==='after')?'':'<p class="small" style="margin:0;color:var(--s-req)">No after photos yet. Add them below before completing.</p>')+'<label class="field"><span>Completion note (optional)</span><textarea class="input" id="ax-note-'+id+'" rows="2" placeholder="Anything Silver Air should know, like damage noticed or products used"></textarea></label>', 'Mark complete');
-    case 'invoice': return box('Add invoice', '<div class="grid2"><label class="field"><span>Invoice number</span><input class="input" id="ax-inv-'+id+'"></label><label class="field"><span>Amount (USD)</span><input class="input" type="number" min="0" step="0.01" id="ax-amt-'+id+'" value="'+esc(j.quote||'')+'"></label></div>', 'Save invoice');
+    case 'invoice': return box(j.invoiceFile?'Replace the invoice':'Upload your invoice', '<p class="small muted" style="margin:0">A PDF, or a clear photo of a paper invoice. Up to 8 MB. Silver Air’s billing team gets it right away.</p>'
+      + '<label class="field filepick"><span>Invoice file</span><input type="file" id="ax-file-'+id+'" accept="application/pdf,image/*" aria-label="Choose invoice file"></label>'
+      + '<div class="grid2"><label class="field"><span>Invoice number</span><input class="input" id="ax-inv-'+id+'" value="'+esc(j.invoiceFile?(j.invoiceNo||''):'')+'"></label><label class="field"><span>Amount (USD)</span><input class="input" type="number" min="0" step="0.01" inputmode="decimal" id="ax-amt-'+id+'" value="'+esc(j.invoiceFile?(j.invoiceAmount??''):(j.quote||''))+'"></label></div>'
+      + (S.uploading?'<p class="small" style="margin:0"><span class="spin"></span> Uploading invoice…</p>':''), j.invoiceFile?'Replace invoice':'Upload invoice');
+    case 'charge': { const c=j.charge||{}; return box('Who should be charged?', '<div class="choices" role="radiogroup"><label class="choice"><input type="radio" name="ax-to-'+id+'" id="ax-to-owner-'+id+'" value="owner"'+(c.to==='owner'?' checked':'')+'><div><b>Owner</b><span>The aircraft owner pays</span></div></label><label class="choice"><input type="radio" name="ax-to-'+id+'" id="ax-to-client-'+id+'" value="client"'+(c.to==='client'?' checked':'')+'><div><b>Client</b><span>The charter client pays</span></div></label></div>'
+      + '<label class="field"><span>Note (optional)</span><textarea class="input" id="ax-note-'+id+'" rows="2" placeholder="e.g. Split 50/50, or PO number">'+esc(c.note||'')+'</textarea></label>', 'Save'); }
     case 'reassign': return box('Send to a vendor', '<label class="field"><span>Vendor</span><select class="input" id="ax-v-'+id+'">'+vOpts+'</select></label>', 'Send job');
     case 'cancel': return box('Cancel this cleaning', '<label class="field"><span>Reason (shared with the vendor)</span><input class="input" id="ax-note-'+id+'" placeholder="e.g. Trip moved up, aircraft departing early"></label>', 'Cancel job','danger');
     case 'reopen': return box('Reopen this job', '<p class="small muted" style="margin:0">It goes back to Requested and the vendor sees it again.</p>', 'Reopen');
@@ -925,6 +1037,18 @@ function writeErr(ex){
   if(c==='bad_vendor') return 'Pick a valid vendor.';
   if(c==='bad_tail') return 'Enter a valid N-number, like N123AB.';
   if(c==='photo_too_big') return 'That photo is too large.';
+  if(c==='not_completed') return 'Mark the job complete before uploading the invoice.';
+  if(c==='already_billed') return 'Silver Air already decided who to charge, so the invoice can’t be replaced. Post a comment instead.';
+  if(c==='invoice_no_missing') return 'Enter the invoice number.';
+  if(c==='invoice_amount_bad') return 'Enter a valid amount.';
+  if(c==='invoice_type_bad') return 'Use a PDF or a photo (JPG or PNG).';
+  if(c==='invoice_too_big') return 'That file is over 8 MB. Try a smaller PDF or a photo.';
+  if(c==='bad_choice') return 'Choose Owner or Client.';
+  if(c==='already_decided') return 'Someone already chose who to charge.';
+  if(c==='not_invoiced') return 'There’s no invoice on this job yet.';
+  if(c==='bad_email') return 'Check the email addresses. Separate several with commas.';
+  if(c==='name_missing') return 'Enter your name.';
+  if(c==='bad_link') return 'This link isn’t valid anymore.';
   if(c==='not_setup') return 'The database isn’t set up yet. Run the setup SQL in Supabase.';
   return 'Couldn’t save. Check your connection and try again.';
 }
@@ -943,7 +1067,25 @@ async function doJobAction(j){
     case 'decline': { const n=val('ax-note'); if(!n) return fail('Give a reason so Silver Air can rebook.'); p={status:'declined', declineReason:n}; t='Declined: '+n; break; }
     case 'start': { const n=val('ax-note'); p={status:'in_progress', startedAt:new Date().toISOString()}; t='Started work'+(n?'. '+n:''); break; }
     case 'complete': { const n=val('ax-note'); p={status:'completed', completedAt:new Date().toISOString()}; if(n) p.completionNote=n; t='Marked complete'+(n?'. '+n:''); break; }
-    case 'invoice': { const inv=val('ax-inv'), amt=val('ax-amt'); if(!inv) return fail('Enter the invoice number.'); if(!amt) return fail('Enter the amount.'); p={status:'invoiced', invoiceNo:inv, invoiceAmount:+amt, invoicedAt:new Date().toISOString()}; t='Invoice #'+inv+' · '+money(amt); break; }
+    case 'invoice': {
+      const inp=document.getElementById('ax-file-'+id); const file=inp&&inp.files&&inp.files[0];
+      const inv=val('ax-inv'), amt=val('ax-amt');
+      if(!file) return fail('Choose the invoice file.'); if(!inv) return fail('Enter the invoice number.'); if(amt===''||isNaN(+amt)||+amt<0) return fail('Enter the amount.');
+      if(file.size > 20*1024*1024) return fail('That file is over 20 MB. Try a smaller PDF or a photo.');
+      S.uploading=true; renderDrawer();
+      try{
+        const f = await prepInvoice(file);
+        if(!f) { S.uploading=false; renderDrawer(); return fail('That file type isn’t supported. Use a PDF or a photo.'); }
+        if(f.data.length > 11500000){ S.uploading=false; renderDrawer(); return fail('That file is over 8 MB. Try a smaller PDF or a photo.'); }
+        await rpc('desk_invoice_add', {p_job:id, p_no:inv, p_amount:+amt, p_name:f.name, p_mime:f.mime, p_data:f.data, p_by:S.name});
+        S.uploading=false; S.action=null; S.fresh=true; toast('Invoice uploaded. Silver Air has it.'); await refresh(); render();
+      }catch(ex){ S.uploading=false; renderDrawer(); const e2=$('#ax-err'); if(e2){ e2.textContent=writeErr(ex); e2.hidden=false; } }
+      return; }
+    case 'charge': {
+      const sel=document.querySelector('input[name="ax-to-'+CSS.escape(id)+'"]:checked'); if(!sel) return fail('Choose Owner or Client.');
+      try{ await rpc('desk_charge_set', {p_id:id, p_to:sel.value, p_note:val('ax-note'), p_by:S.name}); S.action=null; S.fresh=true; toast('Saved. The billing contact gets an email.'); await refresh(); render(); }
+      catch(ex){ fail(writeErr(ex)); }
+      return; }
     case 'reassign': { const v=val('ax-v'); if(!v) return fail('Pick a vendor.'); p={vendorId:v, status:'requested', declineReason:''}; t='Sent to '+((vendorById(v)||{}).name||'vendor'); break; }
     case 'cancel': { const n=val('ax-note'); p={status:'cancelled'}; t='Cancelled'+(n?': '+n:''); break; }
     case 'reopen': { p={status:'requested'}; t='Reopened'; break; }
@@ -962,6 +1104,40 @@ function toDataUrl(file){
     img.onerror=()=>{ URL.revokeObjectURL(url); res(null); };
     img.src=url;
   });
+}
+function fileSize(n){ n=+n||0; if(n<1024) return n+' B'; if(n<1048576) return Math.round(n/1024)+' KB'; return (n/1048576).toFixed(1)+' MB'; }
+function readAsDataUrl(file){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=()=>rej(r.error); r.readAsDataURL(file); }); }
+// PDFs go up as is. Photos (including iPhone HEIC, which Safari decodes) are turned into a JPEG up to 2400px.
+async function prepInvoice(file){
+  const name = (file.name||'invoice').replace(/[\\/:*?"<>|]+/g,'_').slice(0,100);
+  if(file.type==='application/pdf' || /\.pdf$/i.test(name)){
+    let d = await readAsDataUrl(file);
+    d = d.replace(/^data:[^;]*;base64,/, 'data:application/pdf;base64,');
+    return {name, mime:'application/pdf', data:d};
+  }
+  if(/^image\//.test(file.type||'') || /\.(jpe?g|png|heic|heif|webp)$/i.test(name)){
+    const url = URL.createObjectURL(file);
+    try{
+      const img = await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=url; });
+      const max=2400; let w=img.naturalWidth, h=img.naturalHeight; const sc=Math.min(1, max/Math.max(w,h)); w=Math.max(1,Math.round(w*sc)); h=Math.max(1,Math.round(h*sc));
+      const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,w,h); g.drawImage(img,0,0,w,h);
+      return {name:name.replace(/\.[a-z0-9]+$/i,'')+'.jpg', mime:'image/jpeg', data:c.toDataURL('image/jpeg',0.85)};
+    }catch(e){ return null; } finally{ URL.revokeObjectURL(url); }
+  }
+  return null;
+}
+function dataUrlToBlob(d){ const m=/^data:([^;]+);base64,(.*)$/.exec(d||''); if(!m) return null; const bin=atob(m[2]); const u=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) u[i]=bin.charCodeAt(i); return new Blob([u],{type:m[1]}); }
+// Open in a new tab; the tab is opened right away so phones don't block it as a pop up.
+async function openInvoice(getter){
+  const w = window.open('', '_blank');
+  if(w){ try{ w.document.write('<p style="font:16px sans-serif;padding:20px">Opening invoice…</p>'); }catch(e){} }
+  try{
+    const f = await getter(); const blob = dataUrlToBlob(f && f.data);
+    if(!blob) throw new Error('none');
+    const url = URL.createObjectURL(blob);
+    if(w) w.location.href = url; else location.href = url;
+    setTimeout(()=>URL.revokeObjectURL(url), 120000);
+  }catch(ex){ if(w) w.close(); toast(ex && ex.code ? writeErr(ex) : 'Couldn’t open the invoice. Try again.'); }
 }
 async function uploadPhotos(kind, files){
   const j = S.jobs.find(x=>x.id===S.openId); if(!j||!files.length) return;
@@ -1010,9 +1186,14 @@ document.addEventListener('click', async e=>{
     case 'view': S.view=b.dataset.v; lsSet('view',S.view); S.fresh=true; render(); window.scrollTo(0,0); break;
     case 'filter': S.filter=b.dataset.f; render(); break;
     case 'wk': { const d=+b.dataset.d; if(d===0) S.week=startOfWeek(new Date()); else { const w=new Date(S.week); w.setDate(w.getDate()+7*d); S.week=w; } render(); break; }
-    case 'open': S.openId=b.dataset.id; S.action=null; S.fresh=true; renderDrawer(); S.fresh=false; break;
-    case 'close': S.openId=null; S.action=null; renderDrawer(); break;
+    case 'open': { S.openId=b.dataset.id; S.action=null; S.fresh=true; renderDrawer(); S.fresh=false; markSeen(S.jobs.find(x=>x.id===S.openId)); break; }
+    case 'close': S.openId=null; S.action=null; renderDrawer(); render(); break;
     case 'signout': signOut(''); break;
+    case 'inv-view': { const id=b.dataset.id; openInvoice(()=>rpc('desk_invoice_get', {p_job:id})); break; }
+    case 'ask-asm': { const j=S.jobs.find(x=>x.id===S.openId); if(!j) break; b.disabled=true;
+      try{ await rpc('desk_charge_request', {p_id:j.id, p_by:S.name}); toast('Sent. ASM gets a new email.'); await refresh(); }catch(ex){ toast(writeErr(ex)); } b.disabled=false; break; }
+    case 'billing-save': { const a=$('#bl-asm').value.trim(), n=$('#bl-notify').value.trim(); b.disabled=true;
+      try{ await rpc('desk_settings_save', {p_billing:a, p_notify:n}); toast('Billing emails saved'); await refresh(); }catch(ex){ toast(writeErr(ex)); } b.disabled=false; break; }
     case 'new-job': if(!S.vendors.length){ toast(isAdmin()?'Add a cleaning company in Settings first.':'No vendors set up yet.'); break; } openJobForm(null, b.dataset.tail); break;
     case 'modal-close': closeModal(); break;
     case 'jact': { const k=b.dataset.k;
@@ -1055,11 +1236,62 @@ document.addEventListener('change', e=>{ const k=e.target.dataset && e.target.da
 document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ if($('#modalHost').innerHTML) closeModal(); else if(S.openId){ S.openId=null; S.action=null; renderDrawer(); } } });
 
 /* ---------- live updates ---------- */
-setInterval(()=>{ if(S.role && S.ready && !S.mustChange && !document.hidden && !S.uploading) refresh(); }, 30000);
+setInterval(()=>{ if(!CHARGE_TOKEN && S.role && S.ready && !S.mustChange && !document.hidden && !S.uploading) refresh(); }, 30000);
 document.addEventListener('visibilitychange', ()=>{ if(!document.hidden && S.role && S.ready && !S.mustChange) refresh(); });
+
+/* ---------- billing link page for ASM (?charge=token) ---------- */
+var CHARGE_TOKEN = (()=>{ try{ return new URLSearchParams(location.search).get('charge'); }catch(e){ return null; } })();
+const CP = {loading:true, info:null, err:'', saving:false, done:null};
+function renderChargePage(){
+  $('#nav').innerHTML=''; $('#who').innerHTML='';
+  let h = '<div class="gate cp"><div class="gate-logo">'+LOGO_SVG+'</div>';
+  if(CP.loading){ main.innerHTML = h + '<p><span class="spin"></span> Loading…</p></div>'; return; }
+  if(CP.err){ main.innerHTML = h + '<div><div class="kicker">Billing</div><h1>This link isn’t working</h1></div><p class="muted" style="margin:0">'+esc(CP.err)+'</p></div>'; return; }
+  const i = CP.info; const c = CP.done || i.charge;
+  h += '<div><div class="kicker">Billing · '+esc(i.ref||'')+'</div><h1>'+(c&&c.to?'Charge the '+esc(c.to):'Who should be charged?')+'</h1></div>';
+  h += '<dl class="kv"><dt>Aircraft</dt><dd><span class="tail">'+esc(i.tail||'')+'</span> '+esc(i.aircraft||'')+'</dd>'
+    + '<dt>Where</dt><dd>'+esc([i.airport,i.fbo].filter(Boolean).join(' · ')||'—')+'</dd>'
+    + '<dt>When</dt><dd>'+esc(fDT(i.start))+' to '+esc(fDT(i.due))+'</dd>'
+    + '<dt>Vendor</dt><dd>'+esc(i.vendor||'—')+'</dd>'
+    + '<dt>Services</dt><dd>'+esc((i.services||[]).join(', ')||'—')+'</dd>'
+    + '<dt>Invoice</dt><dd>#'+esc(i.invoiceNo||'')+' · <b>'+esc(money(i.invoiceAmount))+'</b></dd></dl>';
+  if(i.invoiceFile) h += '<div class="docrow"><div><div class="nm">'+esc(i.invoiceFile.name||'Invoice')+'</div><div class="small muted">'+esc(fileSize(i.invoiceFile.size))+'</div></div><button class="btn sm" data-act="cp-view">View invoice</button></div>';
+  if(c && c.to){
+    h += '<div class="billbox done"><div class="big">Charge the '+esc(c.to)+'</div>'+(c.note?'<div class="note">'+esc(c.note)+'</div>':'')
+      + '<div class="small muted">Decided by '+esc(c.by||'someone')+' · '+esc(ago(c.at))+'</div></div>'
+      + '<p class="small muted" style="margin:0">'+(CP.done?'Thanks. The billing contact has been emailed.':'This has already been answered. To change it, contact Silver Air People and Culture.')+'</p>';
+    main.innerHTML = h + '</div>'; return;
+  }
+  h += '<form id="cpform" novalidate style="display:grid;gap:14px">'
+    + '<div class="choices" role="radiogroup" aria-label="Who should be charged"><label class="choice"><input type="radio" name="cp-to" value="owner"><div><b>Owner</b><span>The aircraft owner pays</span></div></label>'
+    + '<label class="choice"><input type="radio" name="cp-to" value="client"><div><b>Client</b><span>The charter client pays</span></div></label></div>'
+    + '<label class="field"><span>Note (optional)</span><textarea class="input" id="cp-note" rows="2" placeholder="e.g. Split 50/50, or PO number"></textarea></label>'
+    + '<label class="field"><span>Your name</span><input class="input" id="cp-name" autocomplete="name" value="'+esc(S.name||'')+'"></label>'
+    + '<div id="cp-err" class="err" hidden></div>'
+    + '<div><button class="btn primary" type="submit"'+(CP.saving?' disabled':'')+'>'+(CP.saving?'<span class="spin"></span> Saving…':'Submit')+'</button></div></form>';
+  patch(main, h + '</div>');
+}
+async function chargeBoot(){
+  try{ CP.info = await rpc('desk_charge_info', {p_token:CHARGE_TOKEN}, true); }
+  catch(e){ CP.err = e.code==='bad_link' ? 'It may have expired, or a newer email replaced it. Check for a more recent email from the Cleaning Desk.' : 'Couldn’t reach the server. Check your connection and try again.'; }
+  CP.loading=false; renderChargePage();
+}
+document.addEventListener('submit', async e=>{
+  if(e.target.id!=='cpform') return;
+  e.preventDefault();
+  const sel=document.querySelector('input[name="cp-to"]:checked'); const name=$('#cp-name').value.trim(); const el=$('#cp-err');
+  if(!sel){ el.textContent='Choose Owner or Client.'; el.hidden=false; return; }
+  if(!name){ el.textContent='Enter your name.'; el.hidden=false; $('#cp-name').focus(); return; }
+  S.name=name; lsSet('name', name);
+  CP.saving=true; renderChargePage();
+  try{ CP.done = await rpc('desk_charge_decide', {p_token:CHARGE_TOKEN, p_to:sel.value, p_note:$('#cp-note').value.trim(), p_by:name}, true); CP.saving=false; renderChargePage(); }
+  catch(ex){ CP.saving=false; renderChargePage(); const e2=$('#cp-err'); if(e2){ e2.textContent = ex.code==='already_decided' ? 'Someone already answered. Refresh to see their choice.' : writeErr(ex); e2.hidden=false; } }
+});
+document.addEventListener('click', e=>{ const b=e.target.closest('[data-act="cp-view"]'); if(b) openInvoice(()=>rpc('desk_charge_invoice', {p_token:CHARGE_TOKEN}, true)); });
 
 /* ---------- boot ---------- */
 (async function boot(){
+  if(CHARGE_TOKEN && sb){ renderChargePage(); chargeBoot(); return; }
   const c = sb && readCode();
   if(c){
     S.code = c; S.booting = true; render();
