@@ -13,7 +13,7 @@
 //   EMAIL_FROM      optional. Defaults to Resend's test sender until IT verifies the silverair.com subdomain.
 //   TEST_TO         optional. When set, every email goes ONLY to this address (for testing).
 //   APP_URL         optional. Link to the app. Defaults to the GitHub Pages address below.
-//   REPLY_TO        optional. Where replies go, e.g. dispatch@silverair.com.
+//   REPLY_TO        optional. Where replies go. One address or several separated by commas.
 
 const DEFAULT_APP_URL = "https://silverairprivatejets.github.io/Cleaning-App/";
 const DEFAULT_FROM = "Silver Air Cleaning Desk <onboarding@resend.dev>";
@@ -217,7 +217,10 @@ async function handler(req) {
     const { subject, html, text } = buildEmail(m, appUrl);
     const label = m.kind === "invoice" ? "ASM" : m.kind === "charge" ? "billing contact" : m.vendorName;
     const payload = { from, to, subject: testTo ? `[TEST for ${label}] ${subject}` : subject, html, text };
-    if (replyTo) payload.reply_to = replyTo;
+    if (replyTo) {
+      const rt = recipients(replyTo); // one address, or several separated by commas
+      if (rt.length) payload.reply_to = rt.length === 1 ? rt[0] : rt;
+    }
     if (m.kind === "invoice" && m.hasInvoice) {
       const att = await invoiceAttachment(m.jobId, secret);
       if (att) payload.attachments = [att];
