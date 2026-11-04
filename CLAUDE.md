@@ -34,7 +34,7 @@ Write user facing copy (UI text, emails, instructions) in plain, friendly langua
   lets people add the app to their phone home screen (no service worker, no offline mode).
 - `supabase/functions/notify-vendor/index.ts`: Edge Function that formats and sends emails through Resend.
 
-01 and 02 have been run on the live project. 03 was delivered on Oct 27, 2026; confirm with Austin it was run. For schema changes, add a NEW numbered file
+01, 02 and 03 have all been run on the live project. For schema changes, add a NEW numbered file
 (`03-....sql`) rather than editing history, keep it idempotent (`create or replace`, `if not exists`),
 and tell Austin to paste it into Supabase > SQL Editor > New query > Run. There is no Supabase CLI
 link set up, so you cannot run SQL or deploy functions yourself unless that gets configured.
@@ -117,11 +117,16 @@ link set up, so you cannot run SQL or deploy functions yourself unless that gets
 - Billing emails: `invoice` to the billing team (with attachment and the charge link), and `charge` to the
   billing contact once Owner or Client is chosen. Detection uses the newest
   activity entry (`as = 'Silver Air'`, `type`) and status changes.
-- Edge Function secrets (Supabase > Edge Functions > Secrets): `RESEND_API_KEY`, `DESK_SECRET` (must equal
-  `private.settings.notify_secret`), optional `EMAIL_FROM`, `TEST_TO`, `APP_URL`, `REPLY_TO`.
+- Edge Function secrets (Supabase > Edge Functions > Secrets), as set on the live project: `RESEND_API_KEY`,
+  `DESK_SECRET` (must equal `private.settings.notify_secret`), `EMAIL_FROM`
+  (`Silver Air Cleaning Desk <notifications@notify.silverair.com>`), and `REPLY_TO` (two Silver Air staff who
+  handle vendor replies; a comma separated list becomes several reply-to addresses). Unset: `APP_URL`, `TEST_TO`.
   JWT verification is turned OFF for this function; the shared secret protects it.
-- `TEST_TO` set = every email goes only to that address with a `[TEST for <vendor>]` subject. Until a domain
-  is verified in Resend, Resend only delivers to the account owner's address.
+- `TEST_TO` set = every email goes only to that address with a `[TEST for <vendor>]` subject. Use it only
+  temporarily for testing; it was removed when email went live.
+- Sending domain `notify.silverair.com` is verified in Resend. silverair.com DNS is hosted at Network Solutions
+  (ns33/ns34.worldnic.com) with a DKIM TXT record `resend._domainkey.notify` and CNAMEs `send.notify` and
+  `rsend.notify`. Root silverair.com mail (Office 365) is untouched. Resend free plan: 3,000 emails a month, 100 a day.
 
 ## Brand (Silver Air Brand Style Guide, 06.2026, by AudienceX)
 - Colors: Orange `#FD9600` (primary), Light Gray 1 `#A2A4A3`, Light Grey 2 `#CECFCB`, Cyan `#009CDD`.
@@ -152,16 +157,13 @@ link set up, so you cannot run SQL or deploy functions yourself unless that gets
 - Edge Function: import the file in Node (it only calls `Deno.serve` when `Deno` exists), stub `fetch`,
   and check the 403 on a wrong secret, recipients, `TEST_TO` mode and the rendered HTML.
 
-## Status and open items (as of late October 2026)
-- Live: passcode login, jobs, calendar, fleet, settings, photos, branding.
-- Delivered Oct 27, 2026 (confirm uploaded and 03 run): in app alerts, invoice upload, ASM billing
-  question and answer emails, add to home screen.
-- Until the sending domain is verified in Resend, emails only reach the Resend account owner (or TEST_TO),
-  so ASM will not get billing emails until IT finishes the DNS step.
-- Email: code done and tested locally; Austin was setting up Resend and the Edge Function. Confirm with him
-  whether the secrets are set and a test email has arrived.
-- Waiting on IT: verify `notify.silverair.com` in Resend (DNS records), then set `EMAIL_FROM` to
-  `Silver Air Cleaning Desk <notifications@notify.silverair.com>` and remove `TEST_TO`.
+## Status and open items (as of early November 2026)
+- Live: passcode login, jobs, calendar, fleet, settings, photos, branding, in app alerts, invoice upload,
+  ASM billing question and answer emails, add to home screen.
+- Email is fully live (since early November 2026): vendor emails go to each company's dispatch email,
+  billing emails go to the addresses in Settings > Billing emails, and replies go to the `REPLY_TO` addresses.
+  Confirmed end to end with a test vendor.
+- Austin also handles Silver Air's IT and DNS, so domain or DNS changes go through him.
 - Text message alerts were considered and skipped for now (Twilio cost plus carrier registration).
 - The old claude.ai artifact version is retired. Its two job photos were not migrated.
 - Removed from the old version: live ADS-B position readout (ADS-B Exchange and FlightAware links remain).
